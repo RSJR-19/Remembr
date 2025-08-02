@@ -57,9 +57,6 @@ body {
 
 }
 
-
-
-
 .front-page h1 {
     margin: 0;
     font-size: 80px;
@@ -75,6 +72,42 @@ body {
     opacity: 0;
 }
 
+.choices-screen{
+    
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+}
+
+.choices-screen button {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 3px solid black;
+    
+
+    
+}
+
+.choices-screen.fadeIn {
+    opacity: 1;
+
+}
+
+#seeSubjects {
+    background-color: rgb(249, 76, 38);
+}
+
+#addSubject {
+    background-color: rgb(67, 67, 181);
+}
 @media screen and (max-width:640px) {
     .no-phone {
         display: flex;
