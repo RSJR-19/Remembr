@@ -20,8 +20,15 @@
                 <h4 id="frontPageH4">Quiz app by RSJR.</h4>
             </div>
             <div class="choices-screen" id="choicesScreen">
-                <button id="addSubject">ADD SUBJECT</button>
+                <button id="addSubject" onclick="addSubject()">ADD SUBJECT</button>
                 <button id="seeSubjects">SEE SUBJECTS</button>
+            </div>
+            <div class="add-subject-screen" id="addSubjectScreen">
+                <div class="add-subject-panel">
+                    <h2>ADD SUBJECT:</h2>
+                    <span id="addSubjectSpan">Subject Title...</span>
+                    <input type="text" placeholder="Type Subject Title and Press Enter..." maxlength="20" id="addSubjectInput" autocomplete="off">
+                </div>
             </div>
         </div>
        
