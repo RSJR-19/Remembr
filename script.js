@@ -43,3 +43,43 @@ function addSubject(){
 addSubjectInput.addEventListener("input", ()=> {
         addSubjectSpan.innerText = `Subject Title: ${addSubjectInput.value}`;
 })
+
+
+//BACK BUTTONS//
+function backAdd(){
+    addSubjectScreen.classList.remove("active");
+    setTimeout(() =>{
+        addSubjectScreen.style.display = "none";
+        choicesScreen.style.display = "flex";
+        setTimeout(() => {
+         choicesScreen.classList.add("fadeIn");
+        },50)
+
+
+    },500)
+
+}
+
+function backMain(){
+    console.log("renan")
+    choicesScreen.classList.remove("fadeIn");
+    setTimeout(() => {
+        choicesScreen.style.display = "none";
+        frontPage.style.display = "flex";
+        
+
+        setTimeout(()=> {
+            mainWrapper.classList.remove("active");
+            setTimeout(()=>{
+                 frontPageH4.classList.remove("fade");
+            frontPageH1.classList.remove("fade");
+            },350)
+           
+
+        },25)
+
+
+    },500)
+
+
+}

@@ -67,7 +67,7 @@ body {
 
 
 .choices-screen{
-    
+    position: relative;
     display: flex;
     height: 100%;
     width: 100%;
@@ -143,6 +143,14 @@ body {
 .add-subject-panel input::placeholder{
     font-size: 9px;
    
+
+}
+
+.back-button{
+    position:absolute;
+    margin: 0;
+   top: 5px;
+   left: 10px;
 
 }
 
