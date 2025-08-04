@@ -6,9 +6,13 @@ const choicesScreen = document.getElementById("choicesScreen");
 const addSubjectScreen = document.getElementById("addSubjectScreen");
 const addSubjectSpan = document.getElementById("addSubjectSpan");
 const addSubjectInput = document.getElementById("addSubjectInput");
+const addButton = document.getElementById("addButton");
+
 
 choicesScreen.style.display = "none";
 addSubjectScreen.style.display = "none";
+
+
 
 function scale(){
 mainWrapper.classList.add("active");
@@ -27,6 +31,7 @@ choicesScreen.classList.add("fadeIn");
 }
 
 function addSubject(){
+    addSubjectInputValue = "";
     choicesScreen.classList.remove("fadeIn");
     setTimeout(() => {
     choicesScreen.style.display = "none";
