@@ -105,7 +105,7 @@ addSubjectInput.addEventListener("keydown",(event) =>{
 
 
 //BACK BUTTONS//
-function backAdd(){
+function backChoicesScreen(){
     addSubjectScreen.classList.remove("active");
     setTimeout(() =>{
         addSubjectScreen.style.display = "none";
@@ -120,7 +120,6 @@ function backAdd(){
 }
 
 function backMain(){
-    console.log("renan")
     choicesScreen.classList.remove("fadeIn");
     setTimeout(() => {
         choicesScreen.style.display = "none";
@@ -140,5 +139,18 @@ function backMain(){
 
     },500)
 
+
+}
+
+function backAddSubjectScreen(){
+    subjectAddedScreen.classList.remove("active");
+    setTimeout(()=> {
+        subjectAddedScreen.style.display = "none";
+        choicesScreen.style.display = "flex";
+        setTimeout(()=>{
+            choicesScreen.classList.add("fadeIn");
+        },50)
+
+    },500)
 
 }

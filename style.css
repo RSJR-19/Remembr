@@ -175,6 +175,8 @@ body {
     background-color: rgba(255, 0, 0, 0.411);
     opacity: 0;
     display: flex;
+    flex-direction: column;
+    gap: 15px;
     justify-content: center;
     align-items: center;
     transition: all 0.5s ease-in-out;
@@ -187,6 +189,13 @@ body {
     text-align: center;
     font-family: 'Arial';
     
+}
+
+.subject-added-screen button {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 3px solid black;
 }
 
 
