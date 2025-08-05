@@ -4,7 +4,9 @@ const frontPageH4 = document.getElementById("frontPageH4");
 const frontPageH1 = document.getElementById("frontPageH1");
 const choicesScreen = document.getElementById("choicesScreen");
 const addSubjectScreen = document.getElementById("addSubjectScreen");
+const subjectAddedScreen = document.getElementById("subjectAddedScreen");
 const addSubjectSpan = document.getElementById("addSubjectSpan");
+const subjectAddedH3 = document.getElementById("subjectAddedH3");
 const addSubjectInput = document.getElementById("addSubjectInput");
 const addButton = document.getElementById("addButton");
 
@@ -13,6 +15,7 @@ let newSubject = "";
 
 choicesScreen.style.display = "none";
 addSubjectScreen.style.display = "none";
+subjectAddedScreen.style.display = "none";
 
 
 
@@ -65,7 +68,16 @@ function validateAdd(){
 function addInputSubjectToList(){
     if (isInputValid === true){
         newSubject = addSubjectInput.value;
-        console.log(newSubject);
+        addSubjectScreen.classList.remove("active");
+        setTimeout(()=>{
+            addSubjectScreen.style.display = "none";
+            subjectAddedScreen.style.display = "flex";
+            setTimeout(()=>{
+                subjectAddedScreen.classList.add("active");
+                subjectAddedH3.innerHTML = `"${newSubject}"<br>added to Subjects`;
+            },50)
+        },500)
+
     }
     else {
         alert("Input Subject Title first");
