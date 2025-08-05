@@ -8,6 +8,7 @@ const addSubjectSpan = document.getElementById("addSubjectSpan");
 const addSubjectInput = document.getElementById("addSubjectInput");
 const addButton = document.getElementById("addButton");
 
+let isInputValid = false;
 
 choicesScreen.style.display = "none";
 addSubjectScreen.style.display = "none";
@@ -31,11 +32,13 @@ choicesScreen.classList.add("fadeIn");
 }
 
 function addSubject(){
-    addSubjectInputValue = "";
+    
     choicesScreen.classList.remove("fadeIn");
     setTimeout(() => {
     choicesScreen.style.display = "none";
     addSubjectScreen.style.display = "flex";
+    addSubjectInput.value = "";
+    addSubjectSpan.innerHTML = " "
     setTimeout(() => {
         addSubjectScreen.classList.add("active");
 
@@ -45,9 +48,37 @@ function addSubject(){
 
 }
 
+function validateAdd(){
+    if (addSubjectInput.value !== ""){
+        addButton.classList.add("valid");
+        isInputValid = true;
+
+    }
+    else{
+        addButton.classList.remove("valid");
+        isInputValid = false;
+    }  
+}
+
+function addInputSubject(){
+    if (isInputValid === true){
+        console.log("subject added");
+    }
+    else {
+        console.log("no value");
+    }
+}        
+    
+
+
+
+//EVENTS//
 addSubjectInput.addEventListener("input", ()=> {
-        addSubjectSpan.innerText = `Subject Title: ${addSubjectInput.value}`;
+        addSubjectSpan.innerText = addSubjectInput.value;
+        validateAdd()
 })
+
+//EVENTS//
 
 
 //BACK BUTTONS//
