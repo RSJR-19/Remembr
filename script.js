@@ -9,6 +9,7 @@ const addSubjectInput = document.getElementById("addSubjectInput");
 const addButton = document.getElementById("addButton");
 
 let isInputValid = false;
+let newSubject = "";
 
 choicesScreen.style.display = "none";
 addSubjectScreen.style.display = "none";
@@ -53,6 +54,7 @@ function validateAdd(){
         addButton.classList.add("valid");
         isInputValid = true;
 
+
     }
     else{
         addButton.classList.remove("valid");
@@ -60,12 +62,15 @@ function validateAdd(){
     }  
 }
 
-function addInputSubject(){
+function addInputSubjectToList(){
     if (isInputValid === true){
-        console.log("subject added");
+        newSubject = addSubjectInput.value;
+        console.log(newSubject);
     }
     else {
-        console.log("no value");
+        alert("Input Subject Title first");
+        addSubjectInput.focus();
+        
     }
 }        
     
@@ -77,6 +82,12 @@ addSubjectInput.addEventListener("input", ()=> {
         addSubjectSpan.innerText = addSubjectInput.value;
         validateAdd()
 })
+
+addSubjectInput.addEventListener("keydown",(event) =>{
+    if (event.key === "Enter"){
+        addSubjectInput.blur()
+        
+    }})
 
 //EVENTS//
 
